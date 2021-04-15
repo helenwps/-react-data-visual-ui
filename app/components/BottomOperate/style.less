@@ -1,0 +1,18 @@
+.bottomOperate {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  right: 0;
+  border-top: 1px solid @border-color;
+  background-color: white;
+  padding: 0 30px;
+  :global {
+    .ant-btn + .ant-btn {
+      margin-left: 10px;
+    }
+  }
+}

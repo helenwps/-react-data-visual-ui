@@ -1,0 +1,341 @@
+@import "~assets/less/variable";
+
+.window {
+  width: 320px;
+  background-color: fade(@secondary-color, 50%);
+  padding-top: 64px;
+  margin-bottom: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+
+  
+}
+
+.form {
+  width: 320px;
+  text-align: center;
+}
+
+.input {
+  height: 45px;
+  border-bottom: 1px solid @white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  &:last-of-type {
+    border-bottom: 0;
+  }
+
+  i {
+    color: @white;
+    font-size: 24px;
+    flex-shrink: 0;
+  }
+
+  input {
+    flex: 1;
+    background-color: transparent;
+    padding: 0 8px;
+    border: 0;
+    outline: none;
+    color: @white;
+    font-size: 1.15em;
+
+    &::-webkit-input-placeholder {
+      color: fade(@white, 75);
+    }
+    &::-moz-placeholder {
+      color: fade(@white, 75);
+    }
+    &:-ms-input-placeholder {
+      color: fade(@white, 75);
+    }
+    &:-moz-placeholder {
+      color: fade(@white, 75);
+    }
+
+    &:-webkit-autofill {
+      -webkit-text-fill-color: @white;
+      transition: background-color 9999s ease-in-out 0s;
+    }
+  }
+}
+
+.submit {
+  width: 75%;
+  height: 36px;
+  background-color: transparent;
+  margin-top: 16px;
+  border: 1px solid @white;
+  border-radius: 3px;
+  color: @white;
+  font-size: 1.15em;
+  outline: none;
+
+  &[disabled] {
+    background-color: fade(@white, 20);
+  }
+
+  i {
+    margin-right: 8px;
+  }
+}
+
+.tips {
+  width: 75%;
+  margin-top: 16px;
+  text-align: center;
+
+  span {
+    color: @light-bg;
+  }
+
+  a {
+    font-weight: bold;
+
+    &.register {
+      float: left;
+    }
+
+    &.forgetPassword {
+      float: right;
+    }
+  }
+}
+
+.joinOrganizationLoadingContent {
+  padding: 20px 0;
+  color: @white;
+}
+
+
+
+/*自定义样式*/
+
+:global(.loginFrom) {
+  :global(.submit-button) {
+    display: block;
+    width: 100%;
+    border-radius: 2px;
+    // background-color: @c-primary;
+    // border-color: @c-primary;
+    transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+
+    &:hover {
+      background-color: #102C99;
+      border-color: #102C99;
+    }
+    &:active {
+      background-color: #031762;
+      border-color: #031762;
+    }
+  }
+
+  margin-right: 3%;
+  margin-top: -0%;
+  :global(.headCon){
+    :global(.text1){
+      width:430px;
+      font-size:32px;
+     // font-size:48px;
+      font-weight:normal;
+      font-family: 'FZLTZHK--GBK1-0';
+      color: #040C2C;
+      letter-spacing: 0;
+      line-height:28px;
+      margin-bottom: 24px;
+    }
+    :global(.text2){
+      font-size:16px;
+      font-weight:normal;
+      color: #040C2C;
+letter-spacing: 0;
+      line-height:16px;
+      margin-bottom: 35px;
+
+    }
+  }
+  .comStyle{
+    box-shadow: 0 4px 10px 0 rgba(4,12,44,0.25);
+    // border:1px solid @c-bg-1;
+  }
+  :global(.loginFrom-content) {
+    width: 440px;
+    height: 440px;
+    background: #fff;
+    padding: 40px 40px 20px;
+    
+    border-radius: 2px;
+    box-sizing: border-box;
+
+    .comStyle;
+    :global(.ant-tabs-nav-scroll){
+      text-align: center;
+    }
+
+    :global(.el-tabs) {
+      // &__header {
+      //   margin-bottom: 40px;
+      // }
+      // &__nav-scroll {
+      //   display: flex;
+      //   justify-content: center;
+      // }
+
+      // &__active-bar {
+      //   background-color: @c-primary;
+      // }
+
+      // &__nav-wrap::after {
+      //   height: 1px;
+      //   background-color: #e8e8e8;
+      // }
+
+      // &__item {
+      //   height: auto;
+      //   line-height: 2;
+      //   padding-top: 20px;
+      //   padding-bottom: 12px;
+      //   font-size: 16px;
+
+      //   &.is-active {
+      //     color: @c-primary;
+      //   }
+      // }
+
+      :global(.el-form) {
+        // &-item {
+        //   margin-bottom: 24px;
+        // }
+
+        // .el-input__inner {
+        //   height: 40px;
+        //   border-radius: 2px;
+        // }
+      }
+    }
+
+    :global(.loginFrom-setting) {
+      display: inline-block;
+      height: 52px;
+      line-height: 52px;
+      float: right;
+      cursor: pointer;
+      user-select: none;
+      font-size: 12px;
+      &>span:hover {
+        // color: @c-primary;
+      }
+    }
+    a {
+      font-family: PingFangSC-Regular;
+      font-size: 12px;
+      color: #040C2C;
+      letter-spacing: 0;
+    }
+    p span{
+      position: relative;
+      top: -3px;
+      padding:0 5px;
+    }
+  }
+  :global(.select-tenat-wrap) {
+    width: 440px;
+    height: 354px;
+    // background: @c-bg-5;
+    border-radius: 4px;
+    // .comStyle;
+    :global(.tenat-header) {
+      height: 56px;
+      // border-bottom: 1px solid @c-bg-1;
+      line-height: 56px;
+      font-weight: bolder;
+      padding: 0 40px 0 0;
+      display: flex;
+      text-align: center;
+
+      span{
+        flex:1;
+        font-size: 16px;
+      }
+      i {
+        line-height: 56px;
+        width: 40px;
+        cursor: pointer;
+        font-size: 20px;
+        &:hover {
+          // color: @c-primary;
+        }
+      }
+    }
+    :global(.select-tenat-content) {
+      padding: 40px 40px 20px;
+
+      // /deep/ .el-form {
+      //   &-item {
+      //     margin-bottom: 24px;
+      //   }
+
+      //   .el-radio {
+      //     &__label {
+      //       font-size: 12px;
+      //     }
+
+      //     &__input {
+      //       &.is-checked .el-radio__inner {
+      //         border-color: @c-primary;
+      //         background: @c-primary;
+      //       }
+
+      //       &.is-checked + .el-radio__label {
+      //         color: inherit;
+      //       }
+      //     }
+      //   }
+      // }
+    }
+  }
+}
+
+ @media screen and (max-width: 1440px) {
+  :global(.loginFrom){
+    margin-top: -2%;
+  }
+  :global(.loginFrom .loginFrom-content)  {
+    height: 436px;
+  }
+}
+
+@media screen and (max-width: 1366px) {
+  :global(.loginFrom){
+    margin-top: -1%;
+  }
+  :global(.loginFrom .loginFrom-content)  {
+    padding: 30px 30px 20px;
+    width: 360px;
+    height: 360px;
+  }
+  :global(.loginFrom .headCon .text1){
+    font-size: 32px;
+    font-size:28px;
+    line-height: 60px;
+    margin-bottom: 0;
+  }
+  :global(.loginFrom .headCon .text2){
+    font-size: 18px;
+    line-height: 32px;
+    margin-bottom: 20px;
+  }
+  :global(.loginFrom .select-tenat-wrap){
+    width: 360px;
+    height: 316px;
+  }
+  :global(.loginFrom .select-tenat-wrap .select-tenat-content){
+    padding: 20px 40px 20px;
+  }
+}
+

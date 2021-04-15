@@ -1,0 +1,133 @@
+.container {
+  margin: -16px;
+}
+.height {
+  height: 600px;
+  box-sizing: border-box;
+}
+.listContainer {
+  flex: 1;
+  min-width: 0;
+  padding-top: 30px;
+  background-color: white;
+  user-select: none;
+  display: flex;
+  flex-direction: column;
+
+  .title {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 8px;
+    color: @info-font-color-op;
+    font-size: 13px;
+    justify-content: space-between;
+    .label {
+      flex: 1;
+      padding-left: 8px;
+      font-weight: 500;
+      font-size: 13px;
+      color: @info-font-color-op;
+    }
+
+    i {
+      margin-left: 8px;
+      font-size: 1.14em;
+      color: @disabled-text-color;
+
+      &:hover {
+        color: @text-color;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .list {
+    flex: 1;
+    overflow-y: auto;
+    padding: 0 10px;
+    // 修改里面的tree的样式
+    :global {
+      .ant-tree li span.ant-tree-switcher.ant-tree-switcher-noop {
+        //display: none;
+      }
+      .ant-tree.ant-tree-block-node li .ant-tree-node-content-wrapper {
+        //width: 100%;
+        line-height: 25px;
+      }
+    }
+  }
+}
+
+.listItem {
+  user-select: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  h4 {
+    flex: 1;
+    font-weight: normal;
+    font-size: 12px;
+    color: @info-font-color-op;
+    .ellipsis;
+  }
+
+  input {
+    flex: 1;
+    display: none;
+  }
+
+  i {
+    flex-shrink: 0;
+    margin-left: 8px;
+    font-size: 12px;
+    color: @info-font-color-op;
+    font-weight: 400;
+    font-style: normal;
+    &:hover {
+      color: @primary-color;
+    }
+
+    //&.action,
+    &.confirm {
+      display: none;
+    }
+
+    &.action:last-child,
+    &.confirm {
+      margin-right: 3px;
+    }
+  }
+
+  &:hover {
+    i.action {
+      display: block;
+    }
+  }
+
+  &.editing {
+    h4 {
+      display: none;
+    }
+    .action {
+      display: none;
+    }
+    input {
+      display: block;
+    }
+
+    i {
+      &.confirm {
+        display: block;
+      }
+    }
+
+    &:hover {
+      i.action {
+        display: none;
+      }
+    }
+  }
+}

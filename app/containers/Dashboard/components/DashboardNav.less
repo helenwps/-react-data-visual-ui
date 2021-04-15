@@ -1,0 +1,35 @@
+.dashboardNav {
+  border: 1px solid #E5E6E9;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  height: 48px;
+  padding: 0 20px;
+  justify-content: space-between;
+  background-color: white;
+  .title {
+    font-size: 16px;
+    color: @info-font-color;
+    font-weight: 500;
+    cursor: pointer;
+    &:hover {
+      color: @primary-color;
+    }
+  }
+  .operate {
+    //flex: 0 0 250px;
+    display: flex;
+    align-items: center;
+  }
+  .refreshTime {
+    flex: 1;
+    text-align: right;
+    padding-right: 20px;
+  }
+  :global {
+    .anticon-arrow-left {
+      font-size: 16px;
+      margin-right: 10px;
+    }
+  }
+}

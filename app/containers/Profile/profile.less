@@ -1,0 +1,206 @@
+@import '~assets/less/variable';
+.header {
+  height: 48px;
+  line-height: 48px;
+  padding-left: 20px;
+  border-bottom: 1px solid #e5e6e9;
+  font-family: PingFangSC-Regular;
+  font-size: 16px;
+  color: #040c2c;
+}
+.container {
+  display: flex;
+  padding: 20px 20px 60px 20px;
+  flex-direction: column;
+  .uploadWrapper {
+    height: 100%;
+    width: 100%;
+    margin-left: 66px;
+  }
+  .form {
+    flex: 1;
+  }
+  hr {
+    margin: 0 0 48px 0;
+    border: 0;
+    border-top: 1px solid @grey-line-color;
+  }
+  .avatar {
+    flex-shrink: 0;
+    width: 100%;
+    height: 200px;
+    display: flex;
+    img {
+      flex-shrink: 0;
+      border: 1px solid @light-bg;
+      width: 160px;
+      height: 160px;
+      margin-right: 20px;
+      border-radius: 50%;
+      overflow: hidden;
+    }
+    .uploadAvatar {
+      display: flex;
+      flex-direction: column;
+      padding: 28px 20px 0 20px;
+      .uploadTitle {
+        font-size: 16px;
+        font-weight: 600;
+        margin-bottom: 8px;
+      }
+      button {
+        margin-bottom: 16px;
+      }
+      .uploadDesc {
+        color: @light-text-color;
+      }
+    }
+  }
+}
+.formView {
+}
+.hide {
+  display: none;
+}
+.orgIcon {
+  display: inline-block;
+}
+.avatarWrapper {
+  height: 41px;
+  width: 41px;
+  display: inline-block;
+  margin-right: 4px;
+  img {
+    vertical-align: top;
+  }
+}
+
+.containerWarp {
+  display: flex;
+  padding: 20px 20px 60px 20px;
+  .avatar {
+    flex-shrink: 0;
+    width: 200px;
+    height: 200px;
+  }
+  .form {
+    flex: 1;
+  }
+}
+:global {
+  .resetpassword {
+    .ant-btn-primary {
+      color: #fff !important;
+      font-size: 12px;
+    }
+  }
+  .userManage {
+    height: calc(100% - 48px);
+    .ant-btn {
+      border-radius: 2px !important;
+      font-size: 12px;
+      font-family: PingFangSC-Regular;
+      letter-spacing: 0;
+      text-align: center;
+      line-height: 18px;
+      color: #040c2c;
+      height: 30px;
+      width: 68px;
+    }
+    .ant-btn-primary {
+      color: #fff;
+    }
+  }
+}
+.content {
+  padding: 20px 10px;
+  height: 100%;
+  .headerButton {
+    text-align: right;
+    button {
+      margin-right: 10px;
+    }
+  }
+  .layout {
+    background-color: #fff;
+    height: 100%;
+    .sider {
+      max-height: 500;
+      overflow-y: scroll;
+      border: 1px solid #f0f1f3;
+      margin-right: 10px;
+      padding: 10px;
+      .departmentHeader {
+        display: flex;
+        justify-content: space-between;
+        i {
+          cursor: pointer;
+        }
+      }
+    }
+    .right {
+      .cardWrapper {
+        margin-top: 20px;
+        display: flex;
+        // justify-content: space-between;
+        flex-flow: row wrap;
+        .cardList {
+          padding: 10px;
+          height: 137px;
+          // width: 137px;
+          width: calc((100% - 40px) / 5);
+          background: #ffffff;
+          border: 1px solid #e5e6e9;
+          border-radius: 4px;
+          border-radius: 4px;
+          position: relative;
+          margin-right: 10px;
+          margin-bottom: 10px;
+          &:nth-child(5n) {
+            margin-right: 0;
+          }
+          .title {
+            font-family: PingFangSC-Medium;
+            font-size: 14px;
+            color: #040c2c;
+            letter-spacing: 0;
+            line-height: 22px;
+            position: relative;
+            .checkbox {
+              position: absolute;
+              right: 0;
+            }
+          }
+          .name {
+            margin-top: 10px;
+            font-family: PingFangSC-Regular;
+            font-size: 12px;
+            color: #596774;
+            letter-spacing: 0;
+            line-height: 18px;
+          }
+          .bottom {
+            position: absolute;
+            bottom: 10px;
+            text-align: right;
+            width: calc(100% - 20px);
+            .icon {
+              font-size: 32px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.roleList {
+  height: calc(100% - 48px);
+  .searchInput {
+    width: 186px;
+    float: right;
+  }
+  .tableWrap {
+    margin-top: 15px;
+  }
+}
+

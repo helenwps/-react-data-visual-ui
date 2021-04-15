@@ -1,0 +1,129 @@
+<html>
+
+<head>
+    <style>
+        @font-face {
+            font-family: 'iconfont';
+            /* project id 2247657 */
+            src: url('http://at.alicdn.com/t/font_2247657_4vjbpnyu7v9.eot');
+            src: url('http://at.alicdn.com/t/font_2247657_4vjbpnyu7v9.eot?#iefix') format('embedded-opentype'),
+                url('http://at.alicdn.com/t/font_2247657_4vjbpnyu7v9.woff2') format('woff2'),
+                url('http://at.alicdn.com/t/font_2247657_4vjbpnyu7v9.woff') format('woff'),
+                url('http://at.alicdn.com/t/font_2247657_4vjbpnyu7v9.ttf') format('truetype'),
+                url('http://at.alicdn.com/t/font_2247657_4vjbpnyu7v9.svg#iconfont') format('svg');
+        }
+
+        .iconfont {
+            font-family: "iconfont" !important;
+            font-size: 16px;
+            font-style: normal;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+
+        }
+
+        .send-mail-container {
+            /* width: 100%; */
+            box-sizing: border-box;
+            height: 100%;
+            background-color: #F7F7F8;
+            padding: 32px 20px 20px;
+            /* display: flex; */
+            /* flex-direction: column; */
+        }
+
+        .title-container {
+            /* display: flex; */
+            /* align-items: center; */
+
+        }
+
+        .send-mail-container i {
+            color: #1740DC;
+            font-size: 24px;
+        }
+
+        .title-container p {
+            font-family: PingFangSC-Medium;
+            font-size: 14px;
+            color: #040C2C;
+            line-height: 22px;
+            display: inline-block;
+            padding-left: 11px;
+        }
+
+        .mail-content-container {
+            flex: 1;
+            margin-top: 22px;
+            padding: 20px;
+            background-color: #FFFFFF;
+        }
+
+        .mail-content-container h1 {
+            margin-bottom: 20px;
+            font-family: PingFangSC-Semibold;
+            font-size: 24px;
+            color: #000000;
+            line-height: 36px;
+        }
+
+        .mail-content-container p {
+            line-height: 28px;
+        }
+
+        .mail-content-container a {
+            display: inline-block;
+            width: 100px;
+            height: 40px;
+            line-height: 40px;
+            margin: 20px 0 30px;
+            background: #1740DC;
+            border-radius: 2px;
+            border-radius: 2px;
+            text-align: center;
+            font-family: PingFangSC-Medium;
+            font-size: 16px;
+            color: #FFFFFF;
+            letter-spacing: 0;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="send-mail-container">
+        <div class="title-container">
+            <i class="iconfont" alt="东智可视化智能平台" title="东智可视化智能平台">&#xe64d;</i>
+            <p>
+                东智可视化智能平台
+            </p>
+
+        </div>
+        <div class="mail-content-container">
+            <h1>
+                邮箱激活
+            </h1>
+            <p>
+                尊敬的东智可视化智能平台用户，您好！ 
+                <br>
+                您正在激活账户（<span th:text="${username}">username</span>），请点击“立即激活”按钮完成激活！
+            </p>
+            <a th:href="@{{host}/#/activate(token=${token},host=${host})}">立即激活</a>
+            <p>
+                此致：
+            </p>
+            <p style="font-weight:bold;">
+                东智可视化智能平台团队
+            </p>
+        </div>
+    </div>
+
+</body>
+
+</html>

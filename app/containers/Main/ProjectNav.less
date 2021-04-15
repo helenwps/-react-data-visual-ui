@@ -1,0 +1,43 @@
+@import "~assets/less/variable";
+.projectMainContent {
+  height: 100%;
+  .projectHead {
+    background-color: white;
+    .nav {
+      height: 48px;
+      display: flex;
+      position: relative;
+      align-items: center;
+      padding: 0 20px;
+      color: @info-font-color;
+      border-bottom: 1px solid @border-color;
+      justify-content: center;
+      .back {
+        position: absolute;
+        left: 20px;
+        font-size: 14px;
+        cursor: pointer;
+        &:hover {
+          color: @primary-color;
+        }
+        i {
+          font-size: 14px;
+          padding-right: 5px;
+        }
+      }
+      .title {
+        font-size: 16px;
+        font-weight: 500;
+      }
+    }
+    .menu {
+      padding: 0 20px;
+      border-bottom: 2px solid @border-color;
+    }
+  }
+  .projectBody {
+    position: relative;
+    height: calc(100% - 100px);
+    // background-color: white;
+  }
+}

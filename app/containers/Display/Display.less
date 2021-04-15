@@ -1,0 +1,59 @@
+@import '~assets/less/variable';
+
+:global {
+  .display {
+    &-layout {
+      overflow: hidden;
+
+      & > .ant-layout-content {
+        display: flex;
+        flex-direction: column;
+
+        & > div {
+          flex: 1;
+        }
+      }
+
+      &-content {
+        overflow: hidden;
+      }
+
+      &-sider {
+        overflow-y: auto;
+      }
+    }
+  }
+}
+.importList {
+  li {
+    height: 30px;
+    line-height: 30px;
+    padding: 0 10px;
+    background-color: #fff;
+    cursor: pointer;
+    i {
+      margin-right: 10px;
+    }
+  }
+}
+.radio {
+  margin-top: 10px;
+  font-size: 12px;
+  width: 100%;
+  text-align: center;
+  .selected {
+    color: #1740dc;
+    border: 1px solid #1740dc;
+  }
+  button {
+    width: 110px;
+    height: 30px;
+    background: #ffffff;
+    border-radius: 2px 0px 0px 2px;
+    border: 1px solid #cdced5;
+    font-size: 12px;
+    font-family: PingFangSC-Regular, PingFang SC;
+    font-weight: 400;
+    outline: none;
+  }
+}

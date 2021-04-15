@@ -1,0 +1,13 @@
+*[class*='ant-'].ant-table-thead > tr > th {
+  padding: 6px 8px;
+  font-size: 12px;
+  color: rgba(4,12,44,0.65);
+  background-color: #F0F1F3;
+}
+
+*[class*='ant-'].ant-table-tbody > tr > td {
+  padding: 10px 8px;
+  font-size: 12px;
+  color: rgba(4,12,44, 1);;
+}
+

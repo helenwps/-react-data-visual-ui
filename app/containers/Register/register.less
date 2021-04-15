@@ -1,0 +1,276 @@
+@import "~assets/less/variable";
+
+.content {
+    text-align: center;
+    // color: @white;
+    h1 {
+        // color: @white;
+    }
+    p {
+        font-size: 14px;
+        margin-top: 12px;
+    }
+
+}
+.back {
+  margin-top: 16px;
+  font-size: 16px;
+  cursor: pointer;
+  i{
+    margin-right: 8px;
+  }
+}
+
+.tips {
+  margin-top: 16px;
+  span {
+    // color: @light-bg;
+  }
+  a {
+    font-weight: 600;
+  }
+}
+
+.activeWrapper {
+  position: absolute;
+  top:0;
+  right:0;
+  left:0;
+  bottom:0;
+  width: 100%;
+  height:100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+// 参考东智云
+:global(.register) {
+  height: 100%;
+  background:  #f7f7f8;
+  font-size: 12px;
+  
+  :global(.submit-button) {
+      display: block;
+      width: 100%;
+      border-radius: 2px;
+      // background-color: @c-primary;
+      // border-color: @c-primary;
+      transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+
+      &:hover {
+          background-color: #102C99;
+          border-color: #102C99;
+      }
+      &:active {
+          background-color: #031762;
+          border-color: #031762;
+      }
+  }
+
+  :global(.register-header) {
+      // background: @c-white;
+  }
+  :global(.register-content) {
+      position: relative;
+      height: 100%;
+      overflow: auto;
+      :global(.register-title) {
+          height: 92px;
+          line-height: 92px;
+          font-size:23px;
+          font-family:PingFangSC-Regular,PingFang SC;
+          text-align: center;
+      }
+      :global(.register-from-content){
+          width: 80%;
+          margin: 0 auto 20px;
+
+          background:#fff;
+          padding-top:40px;
+        //   padding-bottom: 60px;
+          :global(.ant-form-item-label){
+            text-align: left !important;
+          }
+          &>div{
+              width: 360px;
+              margin: 0 auto;
+          }
+      }
+      :global(.register-form-title){
+          width: 360px;
+          display: flex;
+          margin: 0 auto;
+          //flex-direction: row-reverse;
+          font-weight: 700;
+          text-align: right;
+          justify-content: flex-end;
+          // height: 60px;
+          // line-height: 60px;
+
+      }
+      :global(.register-form-footer) {
+          width: 360px;
+          display: flex;
+          margin: 0 auto;
+          font-weight: 700;
+          height: 40px;
+          line-height: 20px;
+      }
+      :global(.register-tologin) {
+          // color: @c-primary;
+          padding: 0 2px;
+          cursor: pointer;
+          user-select: none;
+          color: #0B1C00;
+      }
+  }
+
+  :global(.register-success) {
+      position: absolute;
+      top: 170px;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: left;
+
+      :global(.result-icon) {
+          font-size: 0;
+          height:38px;
+          line-height:38px;
+          margin-right:10px;
+          color: #52c41a;
+          display: inline-block;
+            vertical-align: bottom;
+          i {
+              font-size: 38px;
+          }
+      }
+      :global(.result-title) {
+
+          line-height: 38px;
+          color: #52c41a;
+          font-size: 28px;
+          font-weight: bolder;
+      }
+      :global(.result-subtitle) {
+          margin-top: 10px;
+          color: rgba(0, 0, 0, 0.45);
+          font-size: 14px;
+          line-height: 1.6;
+      }
+      :global(.result-extra) {
+          margin-top: 12px;
+
+          :global(.el-button) {
+              color: #fff;
+              // background-color: @c-primary;
+              // border-color: @c-primary;
+          }
+      }
+  }
+
+  :global(.el-form) {
+    &-item {
+          display: flex;
+          align-items: center;
+          margin-bottom: 24px;
+
+          &.form-password.is-error {
+              margin-bottom: 36px;
+          }
+
+          &__label {
+              font-size: 12px;
+          }
+
+          &__content {
+              flex: 1;
+
+              :global(.el-input__inner) {
+                  border-radius: 2px;
+              }
+          }
+      }
+  }
+  :global(.el-input-group__append) {
+      border-top-right-radius: 2px;
+      border-bottom-right-radius: 2px;
+      background-color: #fff;
+      font-size: 12px;
+      transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+
+      &:hover {
+          color: #040C2C;
+          background-color: #F0F1F3;
+      }
+
+      .el-button {
+          width: 120px;
+          font-size: 12px;
+      }
+  }
+  :global(.el-checkbox__input.is-checked .el-checkbox__inner) {
+      // background-color: @c-primary;
+      // border-color: @c-primary;
+  }
+
+
+  //表单完善
+  :global(.formExtra-title){
+      margin-bottom: 10px;
+    font-family: PingFangSC-Medium;
+    font-size: 12px;
+    color: #C0C2CA;
+    letter-spacing: 0;
+  }
+}
+
+
+
+// 注册成功
+:global(.register-success) {
+    position: absolute;
+    top: 170px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+
+    :global(.result-icon) {
+        font-size: 0;
+        color: #52c41a;
+
+        i {
+            font-size: 56px;
+        }
+    }
+    :global(.result-title) {
+        // line-height: 1.8;
+        color: #09A120;
+        font-size: 28px;
+        font-weight: bolder;
+        font-family: 'PingFangSC-Regular';
+        letter-spacing: 0;
+        line-height: 48px;
+    }
+    :global(.result-subtitle) {
+        margin-top: 10px;
+        color: rgba(0, 0, 0, 0.45);
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    :global(.back-index){
+        background-color: #1740DC;
+        border-color: #1740DC;
+    }
+    :global(.result-extra) {
+        margin-top: 12px;
+
+        :global(.el-button) {
+            color: #fff;
+            // background-color: @c-primary;
+            // border-color: @c-primary;
+        }
+    }
+}

@@ -1,0 +1,108 @@
+@import "~antd/lib/style/themes/default";
+
+//@blue                               : #1B98E0;
+@blue: #1740DC;
+@white: #fff;
+@black: #000;
+@light-green: #8BC34A;
+@logo-deep: #223151;
+@rich-text: #444444;
+@codemirror-placeholder: #b9b9b9;
+
+@body-bg: #EAEDF1;
+@light-bg: #f7f7f7;
+// 覆盖ant内置变量
+@highlight-color: @blue;
+@primary-color: @blue;
+@text-color: #040C2C;
+@secondary-color: @logo-deep;
+@font-size-base: 12px;
+@light-text-color: lighten(@text-color, 25%);
+@disabled-text-color: lighten(@text-color, 35%);
+@disabled-icon-color: lighten(@text-color, 75%);
+@grey-line-color: rgba(0, 0, 0, .05);
+
+/*** z-index ***/
+@header-index: 2;
+
+@popover-box-shadow: 0 1px 6px rgba(0, 0, 0, .2);
+@header-box-shadow: 0 2px 1px 0 rgba(0, 0, 0, .1);
+@left-side-box-shadow: 2px 0 1px 0 rgba(0, 0, 0, .1);
+@right-side-box-shadow: -2px 0 1px 0 rgba(0, 0, 0, .1);
+@block-box-shadow: 0 2px 3px 0 rgba(0, 0, 0, .05);
+@block-active-box-shadow: 0 7px 21px 0 rgba(0, 0, 0, .15);
+
+@info-font-color: #040C2C;
+@tip-font-color: #5C6176;
+@info-font-color-op: rgba(#040C2C, 0.85);
+@border-color: #F0F1F3;
+/*** global mixins ***/
+.ellipsis {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.hideScrollbar {
+  overflow: -moz-scrollbars-none !important;
+  -ms-overflow-style: none !important;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.antFormItemLabelCustom(@fontSize, @lineHeight, @marginBottom) {
+  :global {
+    .ant-form-item {
+      margin-bottom: @marginBottom;
+    }
+
+    .ant-form-item-label {
+      line-height: @lineHeight;
+
+      label {
+        color: @disabled-text-color;
+        font-size: @fontSize;
+        font-weight: bold;
+      }
+    }
+
+    .ant-form-item-required:before {
+      margin-right: 2px;
+      vertical-align: middle;
+    }
+  }
+}
+
+.antFormItemStyleWithoutForm {
+  :global {
+    .ant-select,
+    .ant-input-number {
+      width: 100%;
+    }
+
+    .ant-input-group {
+      line-height: inherit;
+
+      &.ant-input-group-compact {
+        & > * {
+          vertical-align: baseline
+        }
+      }
+    }
+
+    .ant-calendar-picker {
+      width: 100% !important;
+      min-width: auto !important;
+    }
+  }
+
+  &.small {
+    :global {
+      .ant-form-item-control {
+        line-height: 32px;
+      }
+    }
+  }
+}

@@ -1,0 +1,33 @@
+.ReleaseListModel {
+  .operate {
+    cursor: pointer;
+    &:hover {
+      color: @primary-color;
+    }
+  }
+  .info {
+    color: @info-font-color;
+    font-size: 12px;
+    float: left;
+    .createNew {
+      cursor: pointer;
+      color: @primary-color;
+    }
+  }
+  .text-info {
+    color: @info-font-color;
+    font-size: 12px;
+  }
+
+  //页面跳转
+  .jumpPage {
+    .text-info;
+    cursor: pointer;
+    &:hover {
+      color: @primary-color;
+    }
+  }
+  .disabled {
+    pointer-events: none;
+  }
+}

@@ -1,0 +1,203 @@
+.container {
+  flex: 1;
+
+  .controlForm {
+    flex: 1;
+    display: flex;
+
+    .splitPanel {
+      flex: 1;
+      display: flex;
+    }
+  }
+}
+
+.treeContainer {
+  padding: 4px 0;
+}
+
+.tree {
+  // :global(li) {
+  //   padding: 2px 0;
+  // }
+  :global(li span.ant-tree-switcher),
+  :global(li span.ant-tree-iconEle) {
+    height: 28px;
+    line-height: 28px;
+  }
+  :global(li .ant-tree-node-content-wrapper) {
+    height: 28px;
+    line-height: 24px;
+  }
+  :global {
+    .ant-tree-child-tree > li:first-child {
+      padding-top: 2px;
+    }
+  }
+  // :global(li .ant-tree-node-content-wrapper:hover),
+  // :global(li .ant-tree-node-content-wrapper.ant-tree-node-selected) {
+  //   background-color: transparent;
+  // }
+  // :global(li .ant-tree-node-content-wrapper.ant-tree-node-selected) {
+  //   color: @primary-color;
+  //   font-weight: bold;
+  // }
+}
+
+.relatedForm {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+
+  .title {
+    flex-shrink: 0;
+    padding: 30px 8px 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    .mainTitle {
+      flex: 0 0 100%;
+      margin-bottom: 15px;
+    }
+    h2 {
+      flex: 1;
+      font-size: 13px;
+      font-weight: 500;
+      color: @info-font-color-op;
+    }
+
+    .action {
+      flex-shrink: 0;
+    }
+  }
+
+  .itemContainer {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    .flagTitle {
+      font-size: 12px;
+      font-weight: 500;
+      color: @info-font-color;
+      line-height: 22px;
+      position: relative;
+      padding-left: 12px;
+      &:before {
+        position: absolute;
+        content: '';
+        left: 0;
+        top: 4px;
+        width: 3px;
+        height: 14px;
+        background-color: @primary-color;
+      }
+    }
+    .title {
+      .checkAll {
+        color: @light-text-color;
+      }
+    }
+
+    ul {
+      flex: 1;
+      overflow-y: auto;
+    }
+
+    li {
+      height: 30px;
+      display: flex;
+      align-items: center;
+    }
+
+    .checkbox {
+      padding: 0 16px;
+      .ellipsis;
+    }
+  }
+
+  .viewContainer {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    padding: 0 8px;
+
+    .views {
+      flex: 1;
+      overflow-y: auto;
+
+      &.empty {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+}
+
+.relatedView {
+  padding: 8px 0;
+  margin: 0 16px;
+
+  .name {
+    height: 40px;
+    display: flex;
+    align-items: center;
+
+    h4 {
+      flex: 1;
+      color: @light-text-color;
+      .ellipsis;
+    }
+
+    .fieldType {
+      flex-shrink: 0;
+    }
+  }
+
+  :global {
+    .ant-form-item {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.commonForm {
+  flex: 1;
+  overflow-y: auto;
+
+  :global {
+    .ant-form-item {
+      margin-bottom: 8px;
+    }
+    .ant-divider {
+      color: @light-text-color !important;
+    }
+  }
+}
+
+.optionsModal {
+  :global {
+    .ant-form-item {
+      margin-bottom: 0;
+    }
+    .ant-modal-header,
+    .ant-modal-body  {
+      padding: 16px;
+    }
+    .ant-divider {
+      color: @light-text-color !important;
+      font-size: 1em !important;
+    }
+  }
+}
+
+.queryMode {
+  margin-top: 4px;
+  float: left;
+}

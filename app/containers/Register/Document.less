@@ -1,0 +1,95 @@
+:global(#app) {
+    height: 100%;
+    >div:first-child{
+      height: 100%;
+    }
+  }
+
+:global(.register) {
+    height: 100%;
+    background: #f7f7f8;
+    :global(.register-header) {
+        background: #fff;
+        P{
+            font-family: 'PingFangSC-Medium';
+            font-size: 14;
+            color: #040C2C;
+            cursor:pointer;
+          }
+        i{
+            vertical-align: middle;
+            color: #3C2CEE; 
+            width: 24px; 
+            line-height: 40px; 
+            font-size: 26px;
+            margin-right: 10px;
+        }
+    }
+    :global(.register-content){
+        height: calc(100% - 104px);
+        overflow: auto;
+        :global(.register-title) {
+            height: 125px;
+            line-height: 125px;
+            font-size:32px;
+            font-family:PingFangSC-Regular,PingFang SC;
+            text-align: center;
+        }
+        :global(.register-from-content){
+            width: 80%;
+            margin: 0 auto;
+            background: #fff;
+            padding-bottom: 60px;
+            // min-height: calc(100% - 125px);
+            padding: 25px;
+        }
+    }
+}
+
+
+// header
+
+:global(.loginHeader) {
+    height: 56px;
+    line-height: 56px;
+    padding: 0 20px;
+    display: flex;
+    :global(.header-logo) {
+        cursor: pointer;
+    }
+
+    &>span{
+        display:inline-block;
+        height: 100%;
+    }
+    :global(.project-logo) {
+        cursor: pointer;
+        // :global(.iconIoT ){
+        //     font-size: 32px;
+        //     color: @c-primary;
+        //     vertical-align: middle;
+        // }
+    }
+    :global(.project-name) {
+        font-weight: bold;
+        color:#040C2C;
+        letter-spacing:1px;
+        line-height: 58px;
+        font-size: 20px;
+        cursor: pointer;
+    }
+}
+
+
+
+// footer
+:global(.footer-copyRight){
+    span {
+        display: block;
+        height: 48px;
+        line-height: 48px;
+        text-align: center;
+        color:rgba(4,12,44,0.65);
+        user-select: none;
+    } 
+ }

@@ -1,0 +1,758 @@
+@import '~assets/less/variable';
+
+.widget {
+  height: 120px;
+  background-color: @body-background;
+  margin-bottom: 20px;
+  border-radius: 2px;
+  box-shadow: @block-box-shadow;
+  transform: translate3d(0, 0, 0);
+  transition: all 200ms linear;
+  position: relative;
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: @block-active-box-shadow;
+    transform: translate3d(0, -5px, 0);
+
+    .pic {
+      transform: translate(0, -5px);
+    }
+  }
+
+  &.selector {
+    border: 1px solid @border-color-base;
+    border-radius: 4px;
+    box-shadow: none;
+
+    &:hover {
+      transform: none;
+    }
+
+    &.selected {
+      border-color: @primary-color;
+    }
+
+    .checkmark {
+      border-top: 12px solid @primary-color;
+      border-bottom: 12px solid transparent;
+      border-right: 20px solid @primary-color;
+      border-left: 20px solid transparent;
+      position: absolute;
+      top: 0;
+      right: 0;
+
+      i {
+        color: @white;
+        position: absolute;
+        top: -11px;
+        right: -18px;
+      }
+    }
+  }
+
+  .title {
+    padding: 12px 40px 0 12px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  .content {
+    padding: 8px 12px;
+    color: @light-text-color;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  .pic {
+    font-size: 36px;
+    font-weight: normal;
+    line-height: 1;
+    color: @primary-color;
+    position: absolute;
+    bottom: 8px;
+    right: 12px;
+    opacity: 0.8;
+    transition: transform 300ms linear;
+  }
+
+  .delete,
+  .copy {
+    position: absolute;
+    top: 8px;
+    font-size: 15px;
+    opacity: 0.5;
+    transition: transform 200ms ease;
+
+    &:hover {
+      opacity: 1;
+      transform: scale(1.1, 1.1);
+    }
+  }
+
+  .delete {
+    right: 8px;
+  }
+
+  .copy {
+    right: 32px;
+  }
+}
+
+// .workbench {
+//   margin: -16px;
+//   flex: 1;
+//   display: flex;
+//   flex-direction: row;
+//   min-height: 0;  /* firefox flex overflow issue */
+
+//   .formView {
+//     padding: 16px;
+//     border-right: 1px solid @border-color-base;
+//     overflow-y: auto;
+//     flex: 0 0 320px;
+
+//     .scCol {
+//       padding: 30px 0 20px;
+//       display: flex;
+//       flex-direction: row;
+//       justify-content: center;
+//     }
+//   }
+
+//   .splitView {
+//     padding: 16px;
+//     flex: 1;
+//     overflow-x: auto;
+//     display: flex;
+//     flex-direction: column;
+
+//     .splitViewBody {
+//       flex: 1;
+//       display: flex;
+//       flex-direction: column;
+//       position: relative;
+//     }
+
+//     .splitViewFooter {
+//       flex-shrink: 0;
+//       display: flex;
+//       flex-direction: row;
+//       justify-content: space-between;
+
+//       .sqlInput {
+//         flex-basis: 50%;
+
+//         .runSql {
+//           cursor: pointer;
+//         }
+//       }
+//     }
+//   }
+// }
+
+.formUnit {
+  .unitTitle {
+    padding: 10px 0;
+  }
+
+  .unitContent {
+    padding: 10px;
+    border: 1px solid @border-color-base;
+    border-radius: 4px;
+  }
+
+  .buttonCol {
+    padding: 10px 0;
+  }
+}
+:global [data-v-widget] {
+  .ant-card-body {
+    padding: 0 !important;
+  }
+}
+// .containerEmpty {
+//   flex: 1;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   align-items: center;
+// }
+
+// .tableContainer {
+//   flex: 1;
+//   display: flex;
+//   flex-direction: column;
+// }
+
+// .widgetChart {
+//   flex: 1;
+//   display: flex;
+//   flex-direction: column;
+//   position: relative;
+//   overflow: hidden;
+// }
+// .tableChart {
+//   width: 100%;
+//   height: 100%;
+// }
+
+// .commonChart {
+//   flex: 1;
+//   display: flex;
+//   flex-direction: column;
+// }
+
+.chartSelectOption {
+  position: absolute;
+  top: 6px;
+  right: 8px;
+  color: @primary-color;
+}
+.chartSelectXAxisOption {
+  position: absolute;
+  top: 0px;
+  right: 20px;
+  color: @primary-color;
+}
+
+.addCol {
+  padding-bottom: 10px;
+  text-align: right;
+}
+
+.computedConfigForm {
+  display: flex;
+  flex-direction: column;
+  .body {
+    flex: 4;
+    display: flex;
+    .fields {
+      width: 604px;
+      flex: 0 0 604px;
+      padding-right: 8px;
+      margin-right: 8px;
+      display: flex;
+      flex-direction: column;
+      .fieldName {
+        :global(.ant-input) {
+          border-radius: 0;
+        }
+        :global(.ant-select-selection) {
+          border-radius: 0;
+        }
+        :global(.ant-form-item) {
+          margin-bottom: 0;
+        }
+        flex-shrink: 0;
+      }
+      .tmplWrapper {
+        height: 100%;
+        overflow-y: auto;
+        flex: 4 1 auto;
+        max-height: 196px;
+        :global(.cm-s-3024-day) {
+          :global(span.cm-variable-2) {
+            color: #2dacfc;
+          }
+        }
+      }
+    }
+    .options {
+      flex-shrink: 0;
+      margin-top: 3px;
+      .cardContainer {
+        // ant-tabs .ant-tabs-left-content
+
+        :global(.ant-tabs) {
+          :global(.ant-tabs-right-content) {
+            padding-right: 0;
+          }
+        }
+      }
+    }
+  }
+  .wrapperForm {
+    margin: 16px 0;
+  }
+  .footer {
+    .foot {
+      text-align: right;
+      margin-top: 24px;
+      margin-right: -12px;
+      button {
+        margin-right: 16px;
+      }
+    }
+  }
+
+  :global(.ant-form-item) {
+    margin-bottom: 4px;
+  }
+  :global(.ant-form-item-label) {
+    line-height: 1em;
+  }
+  :global(.ant-form-item-label label) {
+    color: @disabled-text-color;
+    font-size: 12px;
+    font-weight: bold;
+  }
+  :global(.ant-form-item-required:before) {
+    margin-right: 2px;
+    vertical-align: middle;
+  }
+  :global(.ant-form-item-control) {
+    line-height: 32px;
+  }
+}
+
+.mt20 {
+  margin-top: 20px;
+}
+
+.paginationPosition {
+  float: right;
+}
+
+.searchSelect {
+  width: 100%;
+}
+
+.searchCol,
+.addCol {
+  padding: 0 4px;
+  text-align: right;
+  margin-bottom: 8px;
+}
+
+@media (max-width: 768px) {
+  .searchCol {
+    margin-bottom: 8px;
+  }
+}
+
+.searchRow {
+  margin-bottom: 16px;
+}
+
+.tmplWrapper {
+  margin-top: -3px;
+  // border: 1px solid #d9d9d9;
+  // padding: 4px;
+}
+
+.menuWrapper {
+  :global(.ant-input) {
+    border-radius: 0;
+  }
+  input {
+    width: 260px;
+    margin-right: 1px;
+  }
+  ul {
+    width: 260px;
+    border: 1px solid #d9d9d9;
+    border-top: none;
+    border-right: none;
+    height: 196px;
+    max-height: 196px;
+    overflow-y: auto;
+    li {
+      max-height: 24px;
+      line-height: 24px;
+      a {
+        max-height: 24px;
+        line-height: 24px;
+      }
+    }
+  }
+}
+.main {
+  background: #ffffff;
+  height: 100%;
+  border: 1px solid #e5e6e9;
+  .headerContent {
+    height: 48px;
+    line-height: 48px;
+    padding-left: 20px;
+    border-bottom: 1px solid #e5e6e9;
+    background: #ffffff;
+    position: relative;
+    .iconStep {
+      width: 24px;
+      height: 24px;
+      font-size: 12px;
+      line-height: 24px;
+      text-align: center;
+      border-radius: 24px;
+      background-color: #1740dc;
+      position: absolute;
+      right: 208px;
+      top: 50%;
+      transform: translateY(-50%);
+      span {
+        color: #fff;
+      }
+    }
+    .iconStep2 {
+      width: 24px;
+      height: 24px;
+      margin-right: 8px;
+      font-size: 12px;
+      line-height: 24px;
+      border-radius: 24px;
+      font-family: PingFangSC-Regular, PingFang SC;
+      text-align: center;
+      border: 1px solid #e5e6e9;
+      -webkit-transition: background-color 0.3s, border-color 0.3s;
+      transition: background-color 0.3s, border-color 0.3s;
+      position: absolute;
+      right: 85px;
+      top: 50%;
+      transform: translateY(-50%);
+      span {
+        color: rgba(4, 12, 44, 0.25);
+      }
+    }
+    .currentStep {
+      background-color: #1b98e0;
+      span {
+        color: #fff;
+      }
+    }
+    .stepText1,
+    .stepText2,
+    .icon {
+      position: absolute;
+      right: 150px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    .stepText1 {
+      width: 48px;
+      height: 18px;
+      font-size: 12px;
+      font-family: PingFangSC-Regular, PingFang SC;
+      font-weight: 400;
+      color: #040c2c;
+      line-height: 18px;
+    }
+    .icon {
+      right: 124px;
+    }
+    .stepText2 {
+      right: 20px;
+      width: 60px;
+      height: 18px;
+      font-size: 12px;
+      font-family: PingFangSC-Regular, PingFang SC;
+      font-weight: 400;
+      color: rgba(4, 12, 44, 0.25);
+      line-height: 18px;
+    }
+    .title {
+      font-size: 16px;
+      font-family: PingFangSC-Medium, PingFang SC;
+      font-weight: 500;
+      color: #040c2c;
+    }
+  }
+  .chooseData {
+    width: 510px;
+    height: 262px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    .item {
+      width: 226px;
+      img {
+        height: 182px;
+        width: 226px;
+      }
+      .note {
+        padding-top: 11px;
+        width: 226px;
+        height: 80px;
+        background: #4064df;
+        border-radius: 0px 0px 1px 1px;
+        p {
+          text-align: center;
+          height: 18px;
+          font-size: 14px;
+          font-family: PingFangSC-Medium, PingFang SC;
+          font-weight: 500;
+          color: #ffffff;
+          line-height: 18px;
+        }
+        p:last-child {
+          margin-top: 5px;
+          height: 36px;
+          line-height: 18px;
+          font-size: 12px;
+          font-family: PingFangSC-Regular, PingFang SC;
+          font-weight: 400;
+          color: #9ab1f4;
+          text-align: left;
+          padding-left: 14px;
+        }
+      }
+      .create {
+        padding-top: 11px;
+        width: 226px;
+        height: 80px;
+        background: #7acefa;
+        border-radius: 0px 0px 2px 2px;
+        p {
+          text-align: center;
+          height: 18px;
+          font-size: 14px;
+          font-family: PingFangSC-Medium, PingFang SC;
+          font-weight: 500;
+          color: #ffffff;
+          line-height: 18px;
+        }
+        p:last-child {
+          text-align: left;
+          margin-top: 5px;
+          height: 36px;
+          font-size: 12px;
+          font-family: PingFangSC-Regular, PingFang SC;
+          font-weight: 400;
+          color: #d0efff;
+          line-height: 18px;
+          padding-left: 14px;
+        }
+      }
+    }
+  }
+}
+:global {
+  .iconStep {
+    width: 24px;
+    height: 24px;
+    font-size: 12px;
+    line-height: 24px;
+    text-align: center;
+    border-radius: 24px;
+    background-color: #1b98e0;
+    position: absolute;
+    right: 208px;
+    top: 50%;
+    transform: translateY(-50%);
+    span {
+      color: #fff;
+    }
+  }
+  .stepText1 {
+    position: absolute;
+    right: 145px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+.widgetList {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+  background-color: #fff;
+  padding: 15px 20px;
+  overflow: auto;
+  // padding: 20px;
+  .header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    .changeView {
+      .headerButton {
+        cursor: pointer;
+        border-radius: 2px;
+        border: none;
+        outline: none;
+        background: #f0f1f3;
+        &:first-child {
+          margin-right: 10px;
+        }
+      }
+      .selected {
+        background-color: #1740dc;
+        color: #fff;
+      }
+    }
+  }
+  .subtitle {
+    font-size: 12px;
+    font-family: PingFangSC-Regular, PingFang SC;
+    font-weight: 400;
+    color: #5c6176;
+    margin-bottom: 15px;
+  }
+  .createButton {
+    width: 114px;
+    height: 32px;
+    font-size: 12px;
+    font-family: PingFangSC-Regular, PingFang SC;
+    font-weight: 400;
+    color: #ffffff;
+    line-height: 32px;
+    i {
+      font-size: 10px;
+    }
+  }
+  .flex-wrapper {
+    display: flex;
+    flex-flow: row wrap;
+  }
+  .content-card {
+    width: calc((100% - 30px) / 4);
+    padding: 20px 10px 0 10px !important;
+    background: #ffffff;
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.07);
+    // margin-left: 10px;
+    margin-right: 10px;
+    &:nth-child(n + 5) {
+      margin-left: 0;
+      margin-right: 10px;
+      margin-top: 10px;
+    }
+    &:nth-child(4n) {
+      margin-right: 0;
+    }
+    .inner-img {
+      line-height: 20px;
+      img {
+        width: 20px;
+        height: 19px;
+      }
+    }
+    .inner-name {
+      font-family: PingFangSC-Medium;
+      font-size: 14px;
+      color: #040c2c;
+      letter-spacing: 0;
+      margin-top: 10px;
+      line-height: 22px;
+    }
+    .description {
+      font-size: 12px;
+      font-family: PingFangSC-Regular, PingFang SC;
+      font-weight: 400;
+      color: #5c6176;
+      min-height: 18px;
+    }
+    .inner-type {
+      font-family: PingFangSC-Regular;
+      font-size: 12px;
+      color: #5c6176;
+      letter-spacing: 0;
+      line-height: 18px;
+      margin-top: 8px;
+    }
+    .inner-time {
+      font-family: PingFangSC-Regular;
+      font-size: 12px;
+      color: #c0c2ca;
+      letter-spacing: 0;
+      line-height: 18px;
+      margin-top: 24px;
+    }
+    .inner-footer {
+      height: 30px;
+      border-top: 1px solid #e5e8ea;
+      margin: 8px -10px 0;
+      line-height: 30px;
+      text-align: right;
+      padding-right: 10px;
+    }
+  }
+  .flex-wrapper {
+    display: flex;
+    flex-flow: row wrap;
+  }
+}
+.createButton {
+  width: 114px;
+  height: 32px;
+  font-size: 12px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #ffffff;
+  line-height: 32px;
+  i {
+    font-size: 10px;
+  }
+}
+.flex-wrapper {
+  display: flex;
+  flex-flow: row wrap;
+}
+.content-card {
+  width: calc((100% - 30px) / 4);
+  padding: 20px 10px 0 10px !important;
+  background: #ffffff;
+  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.07);
+  // margin-left: 10px;
+  margin-right: 10px;
+  &:nth-child(n + 5) {
+    margin-left: 0;
+    margin-right: 10px;
+    margin-top: 10px;
+  }
+  &:nth-child(4n) {
+    margin-right: 0;
+  }
+  .inner-img {
+    line-height: 20px;
+    img {
+      width: 20px;
+      height: 19px;
+    }
+  }
+  .inner-name {
+    font-family: PingFangSC-Medium;
+    font-size: 14px;
+    color: #040c2c;
+    letter-spacing: 0;
+    margin-top: 10px;
+    line-height: 22px;
+  }
+  .description {
+    font-size: 12px;
+    font-family: PingFangSC-Regular, PingFang SC;
+    font-weight: 400;
+    color: #5c6176;
+    min-height: 18px;
+  }
+  .inner-type {
+    font-family: PingFangSC-Regular;
+    font-size: 12px;
+    color: #5c6176;
+    letter-spacing: 0;
+    line-height: 18px;
+    margin-top: 8px;
+  }
+  .inner-time {
+    font-family: PingFangSC-Regular;
+    font-size: 12px;
+    color: #c0c2ca;
+    letter-spacing: 0;
+    line-height: 18px;
+    margin-top: 24px;
+  }
+  .inner-footer {
+    height: 30px;
+    border-top: 1px solid #e5e8ea;
+    margin: 8px -10px 0;
+    line-height: 30px;
+    text-align: right;
+    padding-right: 10px;
+  }
+}

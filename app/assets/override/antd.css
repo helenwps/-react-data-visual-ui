@@ -1,0 +1,294 @@
+/*
+ * <<
+ * Davinci
+ * ==
+ * Copyright (C) 2016 - 2017 EDP
+ * ==
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ * >>
+ */
+
+/**** react-grid *****/
+
+.react-grid-item {
+  background-color: #fff;
+  border-radius: 2px;
+  cursor: move;
+}
+
+.react-grid-item.react-grid-placeholder {
+  background-color: #586b84;
+}
+
+/***** antd *****/
+
+.ant-modal-small > .ant-modal {
+  width: 400px;
+}
+
+.ant-modal-medium > .ant-modal {
+  width: 46.8%;
+}
+
+.ant-modal-large > .ant-modal {
+  width: 900px !important;
+}
+
+.ant-modal-xlarge {
+  padding: 20px;
+}
+
+.ant-modal-xlarge > .ant-modal {
+  width: auto;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  top: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.ant-modal-xlarge > .ant-modal > .ant-modal-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;  /* firefox flex overflow issue */
+}
+
+.ant-modal-xlarge > .ant-modal > .ant-modal-content > .ant-modal-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;  /* firefox flex overflow issue */
+}
+
+.ant-modal-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.ant-modal-center > .ant-modal {
+  padding: 0;
+  margin: 0;
+  top: auto;
+  min-height: 0;
+}
+
+/* 解决 RangePicker 与其他form元素不对齐 */
+.ant-calendar-range-picker-input {
+  vertical-align: baseline;
+}
+
+@media (max-width: 1200px) {
+  .ant-modal-xlarge {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 900px) {
+  .ant-modal-large > .ant-modal {
+    width: auto;
+    margin: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .ant-modal-small > .ant-modal,
+  .ant-modal-medium > .ant-modal {
+    width: auto;
+  }
+}
+
+/* action 栏按钮左右间距 */
+.ant-table-action-column .ant-btn {
+  margin: 0 4px;
+  padding: 0;
+}
+
+/* 缩小默认行高（override variable） */
+/* .ant-table-thead > tr > th,
+.ant-table-tbody > tr > td {
+  padding: 10px 8px;
+} */
+
+/* 调整空列表与 BoxBody 下方间距 */
+.ant-table-empty {
+  margin-bottom: 20px;
+}
+
+/* 调整因字体大小造成的 RangePicker input 位置不对 */
+.ant-calendar-picker-input {
+  line-height: 1;
+}
+
+.ant-tree.ant-tree-show-line li span.ant-tree-switcher {
+  background: inherit;
+}
+
+.ant-page-header-heading-extra {
+  line-height: 32px;
+}
+
+/** form表单样式 **/
+*[class*='ant-'].ant-form label {
+  font-size: 12px;
+}
+*[class*='ant-'].ant-form-item {
+  margin-bottom: 15px;
+}
+*[class*='ant-'].ant-form-item-label {
+  text-align: left;
+}
+*[class*='ant-'].ant-form-explain, *[class*='ant-'].ant-form-extra {
+  position: absolute;
+  bottom: -14px;
+}
+
+
+*[class*='ant-'].ant-radio-button-wrapper {
+  height: 30px;
+}
+
+*[class*='ant-'].ant-pagination-options-quick-jumper input {
+  height: 30px;
+}
+*[class*='ant-'].ant-input {
+  font-size: 12px;
+  height: 30px;
+}
+*[class*='ant-'].ant-select {
+  font-size: 12px;
+}
+
+/*css主要部分的样式*/
+/*定义滚动条宽高及背景，宽高分别对应横竖滚动条的尺寸*/
+.webkit-scrollbar {
+  width: 7px;
+  /*对垂直流动条有效*/
+
+  height: 7px;
+  /*对水平流动条有效*/
+
+  border-radius: 3px;
+}
+/*定义滚动条的轨道颜色、内阴影及圆角*/
+.webkit-scrollbar-track {
+  background: white;
+  border-radius: 3px;
+  border: 0;
+}
+/*定义滑块颜色、内阴影及圆角*/
+.webkit-scrollbar-thumb {
+  background: rgba(4, 12, 44, 0.25);
+  border-radius: 3px;
+}
+/*定义两端按钮的样式*/
+.webkit-scrollbar-button {
+  background: transparent;
+  visibility: hidden;
+  display: none;
+}
+/*定义右下角汇合处的样式*/
+.webkit-scrollbar-corner {
+  background: transparent;
+  visibility: hidden;
+  display: none;
+}
+::-webkit-scrollbar {
+  width: 7px;
+  /*对垂直流动条有效*/
+
+  height: 7px;
+  /*对水平流动条有效*/
+
+  border-radius: 3px;
+}
+::-webkit-scrollbar-track {
+  background: white;
+  border-radius: 3px;
+  border: 0;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(4, 12, 44, 0.25);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-button {
+  background: transparent;
+  visibility: hidden;
+  display: none;
+}
+::-webkit-scrollbar-corner {
+  background: transparent;
+  visibility: hidden;
+  display: none;
+}
+.el-table__body-wrapper::-webkit-scrollbar {
+  width: 7px;
+  /*对垂直流动条有效*/
+
+  height: 7px;
+  /*对水平流动条有效*/
+
+  border-radius: 3px;
+}
+.el-table__body-wrapper::-webkit-scrollbar-track {
+  background: white;
+  border-radius: 3px;
+  border: 0;
+}
+.el-table__body-wrapper::-webkit-scrollbar-thumb {
+  background: rgba(4, 12, 44, 0.25);
+  border-radius: 3px;
+}
+.el-table__body-wrapper::-webkit-scrollbar-button {
+  background: transparent;
+  visibility: hidden;
+  display: none;
+}
+.el-table__body-wrapper::-webkit-scrollbar-corner {
+  background: transparent;
+  visibility: hidden;
+  display: none;
+}
+
+/**[class*='ant-'].ant-table-thead > tr > th{*/
+/*  white-space: nowrap;*/
+/*}*/
+/**[class*='ant-'].ant-table-row td{*/
+/*  white-space: nowrap;*/
+/*}*/
+
+
+/**高亮**/
+.highlight {
+  background: #e6efff;
+}
+*[class*='ant-'].ant-tree li .ant-tree-node-content-wrapper.ant-tree-node-selected {
+  background-color: transparent;
+}
+*[class*='ant-'].ant-tree li .ant-tree-node-content-wrapper.ant-tree-node-selected h4{
+  color: #3c64e8;
+}
+/**对话框**/
+*[class*='ant-'].ant-modal-body {
+  padding: 20px;
+}
+
+
+
+
+
+
+
